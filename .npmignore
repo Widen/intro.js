@@ -1,0 +1,7 @@
+.idea
+BUILD
+example
+.spmignore
+bower.json
+component.json
+Makefile
