@@ -1,7 +1,7 @@
 {
     "name": "@widen/intro.js",
     "description": "Better introductions for websites and features with a step-by-step guide for your projects",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "author": "Afshin Mehrabani <afshin.meh@gmail.com>",
     "repository": {
         "type": "git",
@@ -16,7 +16,9 @@
     "main": "intro.js",
     "spm": {
         "main": "intro.js",
-        "output": ["introjs.css"]
+        "output": [
+            "introjs.css"
+        ]
     },
     "publishConfig": {
         "registry": "http://widen.artifactoryonline.com/widen/api/npm/npm-local/"
