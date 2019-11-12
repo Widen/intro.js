@@ -379,21 +379,22 @@
    * @param {Object} targetElement
    */
   function _exitIntro(targetElement) {
-    //remove overlay layer from the page
-    var overlayLayer = targetElement.querySelector('.introjs-overlay');
+    //remove overlay layers from the page
+    var overlayLayers = targetElement.querySelectorAll('.introjs-overlay');
 
-    //return if intro already completed or skipped
-    if (overlayLayer == null) {
-      return;
-    }
+    if (overlayLayers) {
+      for (var i = 0; i < overlayLayers.length; i++) {
+        var overlayLayer = overlayLayers[i];
 
-    //for fade-out animation
-    overlayLayer.style.opacity = 0;
-    setTimeout(function () {
-      if (overlayLayer.parentNode) {
-        overlayLayer.parentNode.removeChild(overlayLayer);
+        //for fade-out animation
+        overlayLayer.style.opacity = 0;
+        window.setTimeout(function () {
+          if (this.parentNode) {
+            this.parentNode.removeChild(this);
+          }
+        }.bind(overlayLayer), 500);
       }
-    }, 500);
+    }
 
     //remove all helper layers
     var helperLayer = targetElement.querySelector('.introjs-helperLayer');
